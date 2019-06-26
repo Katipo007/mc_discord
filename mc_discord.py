@@ -51,7 +51,7 @@ class MCLink:
     _DEBUG: bool = False
 
     # RCON socket
-    _rcon_socket = None
+    _rcon_socket = None  # type: socket
 
     # Discord
     _link = None  # type: _DiscordLink
