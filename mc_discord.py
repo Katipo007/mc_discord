@@ -258,7 +258,10 @@ class MCLink:
         if not self.is_connected():
             return "RCON is not connected"
 
-        return await mcrcon.command(self._rcon_socket, command)
+        async def run_command():
+            return mcrcon.command(self._rcon_socket, command)
+
+        return await run_command()
 
     async def help(self, link: "MCLink", args: List[str], user: discord.User):
         """
